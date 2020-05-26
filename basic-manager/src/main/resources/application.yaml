@@ -1,0 +1,21 @@
+server:
+  port: 8088
+mybatis-plus:
+  mapper-locations: classpath:mappers/**/*.xml
+  global-config:
+    db-config:
+      #主键类型  AUTO:"数据库ID自增", INPUT:"用户输入ID",ID_WORKER:"全局唯一ID (数字类型唯一ID)", UUID:"全局唯一ID UUID";
+      id-type: auto
+      table-underline: true
+      #逻辑删除配置
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+    banner: false
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: true
+  type-aliases-package: com.diversity3.modules.*.entity
+
+spring:
+  mvc:
+    throw-exception-if-no-handler-found: true
