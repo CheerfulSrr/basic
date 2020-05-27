@@ -15,7 +15,3 @@ mybatis-plus:
     map-underscore-to-camel-case: true
     cache-enabled: true
   type-aliases-package: com.diversity3.modules.*.entity
-
-spring:
-  mvc:
-    throw-exception-if-no-handler-found: true

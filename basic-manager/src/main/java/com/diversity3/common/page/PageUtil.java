@@ -9,41 +9,35 @@ import java.io.Serializable;
 import java.util.List;
 
 /**
- * 分页工具类
+ * 分页
  *
  * @author Greekn
  */
 @Data
 @ApiModel(value = "分页")
-public class Page<T> implements Serializable {
+public class PageUtil<T> implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @ApiModelProperty(value = "总数")
-    private Integer total;
-
+    protected Integer pageTotal;
     @ApiModelProperty(value = "当前页码")
-    private Integer pageNo;
-
+    protected Integer pageNo;
     @ApiModelProperty(value = "当前页显示数量")
-    private Integer pageSize;
-
+    protected Integer pageSize;
     @ApiModelProperty(value = "数据")
-    private List<T> list;
+    protected List<T> pageData;
 
-    /**
-     * 分页
-     *
-     * @param list  列表数据
-     * @param total 总记录数
-     */
-    public Page(List<T> list, long total) {
-        this.list = list;
-        this.total = (int) total;
+    public PageUtil(Integer pageTotal, Integer pageNo, Integer pageSize, List<T> pageData) {
+        this.pageTotal = pageTotal;
+        this.pageNo = pageNo;
+        this.pageSize = pageSize;
+        this.pageData = pageData;
     }
 
-    public Page(List<T> list, IPage<?> page) {
-        this.list = list;
+    public PageUtil(IPage<T> page, List<T> pageData) {
+        this.pageData = pageData;
+        this.pageTotal = (int) page.getTotal();
         this.pageNo = (int) page.getCurrent();
-        this.total = (int) page.getTotal();
+        this.pageSize = (int) page.getSize();
     }
 }

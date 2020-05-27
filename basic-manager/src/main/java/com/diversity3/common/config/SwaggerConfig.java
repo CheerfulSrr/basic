@@ -36,7 +36,7 @@ public class SwaggerConfig {
 
         return new Docket(DocumentationType.SWAGGER_2)
                 .globalOperationParameters(pars)
-                .host("127.0.0.1:8080")
+                .host("127.0.0.1:8088")
                 .apiInfo(apiInfo())
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.diversity3"))
