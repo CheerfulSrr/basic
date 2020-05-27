@@ -1,5 +1,6 @@
 package com.diversity3.modules.test.dto;
 
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 /**
@@ -11,6 +12,7 @@ public class TestDto {
 
     @NotNull(message = "not null!!!!")
     private Integer id;
+    @NotEmpty(message = "empty!!!!")
     private String name;
 
 }

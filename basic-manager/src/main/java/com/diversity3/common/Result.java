@@ -43,6 +43,10 @@ public class Result<T> implements Serializable {
         return new ResultBuilder<T>().status(IStatusImpl.SUCCESS).build();
     }
 
+    public static <T> Result<T> ok(T data) {
+        return new ResultBuilder<T>().status(IStatusImpl.SUCCESS).data(data).build();
+    }
+
     public static <T> Result<T> of(Integer code, String msg, T data) {
         return new ResultBuilder<T>(code).msg(msg).data(data).build();
     }
@@ -51,8 +55,16 @@ public class Result<T> implements Serializable {
         return new ResultBuilder<T>().data(data).build();
     }
 
+    public static <T> ResultBuilder<T> status(IStatus status){
+        return new ResultBuilder<T>().status(status);
+    }
+
     public static <T> Result<T> exception(BaseException e) {
         return new ResultBuilder<T>().exception(e).build();
+    }
+
+    public static <T> Result<T> exception(IStatus status, T data) {
+        return (Result<T>) status(status).data(data).build();
     }
 
 

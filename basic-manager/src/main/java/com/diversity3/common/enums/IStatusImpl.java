@@ -63,6 +63,11 @@ public enum IStatusImpl implements IStatus {
     PARAM_NOT_NULL(400, "参数不能为空！"),
 
     /**
+     * 参数验证失败！
+     */
+    VALIDATED_ERROR(400, "参数验证失败！"),
+
+    /**
      * 当前用户已被锁定，请联系管理员解锁！
      */
     USER_DISABLED(403, "当前用户已被锁定，请联系管理员解锁！"),
