@@ -2,7 +2,7 @@
 * mybatis-plus
 - [ ] 分页dto
 * Validated
-- [ ] 全局异常
+- [x] 参数异常
 * spring security
 - [ ] 动态权限
 - [ ] 数据权限
