@@ -1,6 +1,5 @@
 package com.diversity3.modules.config;
 
-import com.diversity3.dao.*;
 import com.diversity3.modules.dao.*;
 import com.diversity3.modules.utils.RenException;
 import org.springframework.beans.factory.annotation.Autowired;

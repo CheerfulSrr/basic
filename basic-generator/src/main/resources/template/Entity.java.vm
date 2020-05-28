@@ -1,7 +1,7 @@
 package ${package}.modules.${moduleName}.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
-import ${package}.common.entity.BaseEntity;
+import ${package}.common.base.BaseEntity;
 import lombok.*;
 
 #if(${hasBigDecimal})
@@ -10,16 +10,20 @@ import java.math.BigDecimal;
 import java.util.Date;
 
 /**
+ * <p>
  * ${comments}
+ * </p>
  *
- * @author ${author} ${email}
- * @since ${version} ${date}
+ * @author: ${author}
+ * @version: 1.0
+ * @date: Created in ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ * @package:  ${package}.${moduleName}.entity
+ * @modified: ${author}
+ * @description: ${comments}
+ * @copyright: Copyright (c) ${year}
  */
-@Getter
-@Setter
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
+@lombok.EqualsAndHashCode(callSuper = true)
+@Data
 @TableName("${tableName}")
 public class ${className}Entity extends BaseEntity {
 	private static final long serialVersionUID = 1L;

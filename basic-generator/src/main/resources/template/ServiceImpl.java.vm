@@ -1,0 +1,57 @@
+package ${package}.modules.${moduleName}.service.impl;
+
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.core.conditions.update.LambdaUpdateWrapper;
+import com.baomidou.mybatisplus.core.toolkit.Wrappers;
+import ${package}.common.base.impl.BaseServiceImpl;
+import ${package}.common.utils.ConvertUtils;
+import ${package}.modules.${moduleName}.dao.${className}Dao;
+import ${package}.modules.${moduleName}.entity.${className}Entity;
+import ${package}.modules.${moduleName}.service.${className}Service;
+import org.springframework.stereotype.Service;
+
+import java.util.Map;
+
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @author: ${author}
+ * @version: 1.0
+ * @date: Created in ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ * @package:  ${package}.${moduleName}.entity
+ * @modified: ${author}
+ * @description: ${comments}
+ * @copyright: Copyright (c) ${year}
+ */
+@Service
+public class ${className}ServiceImpl extends BaseServiceImpl<${className}Dao, ${className}Entity> implements ${className}Service {
+
+    @Override
+    public LambdaQueryWrapper<${className}Entity> toQueryWrapper(Map<String, Object> params) {
+        LambdaQueryWrapper<${className}Entity> wrapper = Wrappers.lambdaQuery();
+        wrapper.eq(${className}Entity::getName, params.get("name"));
+        return wrapper;
+    }
+
+    @Override
+    public LambdaUpdateWrapper<${className}Entity> toUpdateWrapper(${className}Entity entity) {
+        LambdaUpdateWrapper<${className}Entity> wrapper = Wrappers.lambdaUpdate();
+        wrapper.eq(${className}Entity::getId, entity.getId());
+        return wrapper;
+    }
+    
+    @Override
+    public List<${className}Entity> toTarget(List<${className}Entity> source) {
+        return ConvertUtils.sourceToTarget(source, ${className}Entity.class);
+    }
+
+    @Override
+    public ${className}Entity toTarget(${className}Entity source) {
+        return ConvertUtils.sourceToTarget(source, ${className}Entity.class);
+    }
+
+
+
+}
