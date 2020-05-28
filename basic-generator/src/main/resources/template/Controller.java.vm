@@ -52,7 +52,7 @@ public class ${className}Controller {
             @ApiImplicitParam(name = Constants.ORDER_BY_FIELD, value = "查询条件3", paramType = "query"),
             @ApiImplicitParam(name = Constants.ORDER, value = "查询条件4", paramType = "query"),
     })
-    //@RequiresPermissions("${moduleName}:${pathName}:page")
+    //// @RequiresPermissions("${moduleName}:${pathName}:page")
     public Result<PageUtil<${className}Dto>> page(@ApiIgnore @RequestParam Map<String, Object> params) {
         PageUtil<${className}Dto> page = ${classname}Service.page(params);
         return Result.ok(page);
@@ -60,7 +60,7 @@ public class ${className}Controller {
 
     @GetMapping("/{id}")
     @ApiOperation("信息")
-    //@RequiresPermissions("${moduleName}:${pathName}:info")
+    //// @RequiresPermissions("${moduleName}:${pathName}:info")
     public Result<${className}Dto> get(@PathVariable("id") Long id) {
         ${className}Entity data = ${classname}Service.getById(id);
         ${className}Dto dto = ConvertUtils.sourceToTarget(data, ${className}Dto.class);
@@ -69,8 +69,8 @@ public class ${className}Controller {
 
     @PostMapping
     @ApiOperation("保存")
-    @LogOperation("保存")
-    //@RequiresPermissions("${moduleName}:${pathName}:save")
+    // @LogOperation("保存")
+    //// @RequiresPermissions("${moduleName}:${pathName}:save")
     public Result save(@RequestBody ${className}Dto dto) {
         //效验数据
         ${className}Entity data = ConvertUtils.sourceToTarget(dto, ${className}Entity.class);
@@ -80,8 +80,8 @@ public class ${className}Controller {
 
     @PutMapping
     @ApiOperation("修改")
-    @LogOperation("修改")
-    //@RequiresPermissions("${moduleName}:${pathName}:update")
+    // @LogOperation("修改")
+    //// @RequiresPermissions("${moduleName}:${pathName}:update")
     public Result update(@RequestBody ${className}Dto dto) {
         //效验数据
         ${className}Entity data = ConvertUtils.sourceToTarget(dto, ${className}Entity.class);
@@ -91,8 +91,8 @@ public class ${className}Controller {
 
     @PostMapping("saveOrUpdate")
     @ApiOperation("保存或修改")
-    @LogOperation("保存或修改")
-    //@RequiresPermissions("${moduleName}:${pathName}:saveOrUpdate")
+    // @LogOperation("保存或修改")
+    //// @RequiresPermissions("${moduleName}:${pathName}:saveOrUpdate")
     public Result saveOrUpdate(@RequestBody ${className}Dto dto) {
         if (dto.getId() == null) {
             save(dto);
@@ -104,8 +104,8 @@ public class ${className}Controller {
 
     @DeleteMapping
     @ApiOperation("删除")
-    @LogOperation("删除")
-    //@RequiresPermissions("${moduleName}:${pathName}:delete")
+    // @LogOperation("删除")
+    //// @RequiresPermissions("${moduleName}:${pathName}:delete")
     public Result delete(@RequestBody Long[] ids) {
         //效验数据
         ${classname}Service.removeByIds(Collections.singletonList(ids));
@@ -114,8 +114,8 @@ public class ${className}Controller {
 
     @GetMapping("export")
     @ApiOperation("导出")
-    @LogOperation("导出")
-    @RequiresPermissions("${moduleName}:${pathName}:export")
+    // @LogOperation("导出")
+    // @RequiresPermissions("${moduleName}:${pathName}:export")
     public void export(@ApiIgnore @RequestParam Map<String, Object> params, HttpServletResponse response) throws Exception {
         List<${className}Entity> list = ${classname}Service.list(params);
         ExcelUtils.exportExcelToTarget(response, null, list, ${className}Excel.class);
