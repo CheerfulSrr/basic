@@ -1,0 +1,22 @@
+package ${package}.modules.${moduleName}.service;
+
+import ${package}.common.base.BaseService;
+import ${package}.modules.${moduleName}.entity.${className}Entity;
+import ${package}.modules.${moduleName}.dto.${className}Dto;
+
+/**
+ * <p>
+ * ${comments}
+ * </p>
+ *
+ * @author: ${author}
+ * @version: 1.0
+ * @date: Created in ${datetime}
+ * @package:  ${package}.${moduleName}.entity
+ * @modified: ${author}
+ * @description: ${comments}
+ * @copyright: Copyright (c) ${date}
+ */
+public interface ${className}Service extends BaseService<${className}Entity, ${className}Dto> {
+
+}

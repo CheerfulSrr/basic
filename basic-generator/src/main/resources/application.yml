@@ -6,9 +6,9 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://101.37.83.15:49700/basic?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
-    username: quietly-plus
-    password: Che$0827.&
+    url: jdbc:mysql://localhost:3306/test?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
     #oracle配置
 #    driverClassName: oracle.jdbc.OracleDriver
 #    url: jdbc:oracle:thin:@47.100.206.162:1521:xe
