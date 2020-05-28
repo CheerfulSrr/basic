@@ -10,6 +10,7 @@ import ${package}.modules.${moduleName}.entity.${className}Entity;
 import ${package}.modules.${moduleName}.service.${className}Service;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 /**

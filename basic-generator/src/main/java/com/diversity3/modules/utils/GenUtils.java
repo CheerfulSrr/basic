@@ -28,7 +28,7 @@ public class GenUtils {
 
     public static List<String> getTemplates() {
         List<String> templates = new ArrayList<String>();
-        templates.add("template/DTO.java.vm");
+        templates.add("template/Dto.java.vm");
         templates.add("template/Entity.java.vm");
         templates.add("template/Dao.java.vm");
         templates.add("template/Dao.xml.vm");
@@ -211,8 +211,8 @@ public class GenUtils {
             return "main" + File.separator + "resources" + File.separator + "mapper" + File.separator + moduleName + File.separator + className + "Dao.xml";
         }
 
-        if (template.contains("DTO.java.vm")) {
-            return packagePath + "dto" + File.separator + className + "DTO.java";
+        if (template.contains("Dto.java.vm")) {
+            return packagePath + "dto" + File.separator + className + "Dto.java";
         }
 
         if (template.contains("page.html.vm")) {
