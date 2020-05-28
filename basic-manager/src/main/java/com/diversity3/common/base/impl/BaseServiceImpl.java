@@ -44,9 +44,8 @@ public abstract class BaseServiceImpl<D extends BaseDao<T>, T, E> extends Servic
     }
 
     @Override
-    public List<E> list(Map<String, Object> params) {
-        List<T> list = baseMapper.selectList(toQueryWrapper(params));
-        return toTarget(list);
+    public List<T> list(Map<String, Object> params) {
+        return baseMapper.selectList(toQueryWrapper(params));
     }
 
     /**

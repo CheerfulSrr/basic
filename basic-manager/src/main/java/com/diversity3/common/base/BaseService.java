@@ -17,6 +17,6 @@ public interface BaseService<T, E> extends IService<T> {
 
     boolean update(T entity);
 
-    List<E> list(Map<String, Object> map);
+    List<T> list(Map<String, Object> map);
 
 }

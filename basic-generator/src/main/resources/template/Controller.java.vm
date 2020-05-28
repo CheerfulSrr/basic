@@ -19,6 +19,7 @@ import springfox.documentation.annotations.ApiIgnore;
 
 import javax.servlet.http.HttpServletResponse;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
@@ -107,7 +108,7 @@ public class ${className}Controller {
     //@RequiresPermissions("${moduleName}:${pathName}:delete")
     public Result delete(@RequestBody Long[] ids) {
         //效验数据
-        ${classname}Service.removeByIds(Arrays.asList(ids));
+        ${classname}Service.removeByIds(Collections.singletonList(ids));
         return Result.ok();
     }
 
