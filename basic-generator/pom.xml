@@ -15,12 +15,6 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <mybatis.version>1.3.0</mybatis.version>
-        <pagehelper.version>1.2.5</pagehelper.version>
-        <velocity.version>1.7</velocity.version>
-        <commons.lang.version>2.6</commons.lang.version>
-        <commons.io.version>2.5</commons.io.version>
-        <commons.configuration.version>1.10</commons.configuration.version>
     </properties>
 
     <dependencies>
@@ -43,33 +37,27 @@
         <dependency>
             <groupId>org.mybatis.spring.boot</groupId>
             <artifactId>mybatis-spring-boot-starter</artifactId>
-            <version>${mybatis.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
-            <version>${pagehelper.version}</version>
         </dependency>
         <dependency>
             <artifactId>velocity</artifactId>
             <groupId>org.apache.velocity</groupId>
-            <version>${velocity.version}</version>
         </dependency>
 
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-            <version>${commons.lang.version}</version>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
+            <groupId>org.apache.commons</groupId>
             <artifactId>commons-io</artifactId>
-            <version>${commons.io.version}</version>
         </dependency>
         <dependency>
             <groupId>commons-configuration</groupId>
             <artifactId>commons-configuration</artifactId>
-            <version>${commons.configuration.version}</version>
         </dependency>
     </dependencies>
 
