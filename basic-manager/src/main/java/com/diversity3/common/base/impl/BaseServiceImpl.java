@@ -127,6 +127,6 @@ public abstract class BaseServiceImpl<D extends BaseDao<T>, T, E> extends Servic
      * @param source T
      * @return entity
      */
-    public abstract T toTarget(T source);
+    public abstract E toTarget(T source);
 
 }
