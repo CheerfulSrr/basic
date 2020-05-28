@@ -11,11 +11,11 @@ import org.apache.ibatis.annotations.Mapper;
  *
  * @author: ${author}
  * @version: 1.0
- * @date: Created in ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ * @date: Created in ${datetime}
  * @package:  ${package}.${moduleName}.entity
  * @modified: ${author}
  * @description: ${comments}
- * @copyright: Copyright (c) ${year}
+ * @copyright: Copyright (c) ${date}
  */
 @Mapper
 public interface ${className}Dao extends BaseDao<${className}Entity> {

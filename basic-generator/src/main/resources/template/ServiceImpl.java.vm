@@ -21,11 +21,11 @@ import java.util.Map;
  *
  * @author: ${author}
  * @version: 1.0
- * @date: Created in ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ * @date: Created in ${datetime}
  * @package:  ${package}.${moduleName}.entity
  * @modified: ${author}
  * @description: ${comments}
- * @copyright: Copyright (c) ${year}
+ * @copyright: Copyright (c) ${date}
  */
 @Service
 public class ${className}ServiceImpl extends BaseServiceImpl<${className}Dao, ${className}Entity, ${className}Dto> implements ${className}Service {

@@ -2,7 +2,8 @@ package ${package}.modules.${moduleName}.entity;
 
 import com.baomidou.mybatisplus.annotation.TableName;
 import ${package}.common.base.BaseEntity;
-import lombok.*;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 #if(${hasBigDecimal})
 import java.math.BigDecimal;
@@ -16,11 +17,11 @@ import java.util.Date;
  *
  * @author: ${author}
  * @version: 1.0
- * @date: Created in ${YEAR}-${MONTH}-${DAY} ${HOUR}:${MINUTE}
+ * @date: Created in ${datetime}
  * @package:  ${package}.${moduleName}.entity
  * @modified: ${author}
  * @description: ${comments}
- * @copyright: Copyright (c) ${year}
+ * @copyright: Copyright (c) ${date}
  */
 @lombok.EqualsAndHashCode(callSuper = true)
 @Data
