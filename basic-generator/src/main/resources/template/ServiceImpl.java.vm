@@ -6,6 +6,7 @@ import com.baomidou.mybatisplus.core.toolkit.Wrappers;
 import ${package}.common.base.impl.BaseServiceImpl;
 import ${package}.common.utils.ConvertUtils;
 import ${package}.modules.${moduleName}.dao.${className}Dao;
+import ${package}.modules.${moduleName}.dto.${className}Dto;
 import ${package}.modules.${moduleName}.entity.${className}Entity;
 import ${package}.modules.${moduleName}.service.${className}Service;
 import org.springframework.stereotype.Service;
@@ -27,12 +28,12 @@ import java.util.Map;
  * @copyright: Copyright (c) ${year}
  */
 @Service
-public class ${className}ServiceImpl extends BaseServiceImpl<${className}Dao, ${className}Entity> implements ${className}Service {
+public class ${className}ServiceImpl extends BaseServiceImpl<${className}Dao, ${className}Entity, ${className}Dto> implements ${className}Service {
 
     @Override
     public LambdaQueryWrapper<${className}Entity> toQueryWrapper(Map<String, Object> params) {
         LambdaQueryWrapper<${className}Entity> wrapper = Wrappers.lambdaQuery();
-        wrapper.eq(${className}Entity::getName, params.get("name"));
+        wrapper.eq(params.containsKey("name"), ${className}Entity::getName, params.get("name"));
         return wrapper;
     }
 
@@ -42,17 +43,16 @@ public class ${className}ServiceImpl extends BaseServiceImpl<${className}Dao, ${
         wrapper.eq(${className}Entity::getId, entity.getId());
         return wrapper;
     }
-    
+
     @Override
-    public List<${className}Entity> toTarget(List<${className}Entity> source) {
-        return ConvertUtils.sourceToTarget(source, ${className}Entity.class);
+    public List<${className}Dto> toTarget(List<${className}Entity> source) {
+        return ConvertUtils.sourceToTarget(source, ${className}Dto.class);
     }
 
     @Override
-    public ${className}Entity toTarget(${className}Entity source) {
-        return ConvertUtils.sourceToTarget(source, ${className}Entity.class);
+    public ${className}Dto toTarget(${className}Entity source) {
+        return ConvertUtils.sourceToTarget(source, ${className}Dto.class);
     }
-
 
 
 }

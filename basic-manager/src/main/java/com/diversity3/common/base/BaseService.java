@@ -11,12 +11,12 @@ import java.util.Map;
  * @version 0.1
  * @date 2020-05-26 23:15
  */
-public interface BaseService<T> extends IService<T> {
+public interface BaseService<T, E> extends IService<T> {
 
-    PageUtil<T> page(Map<String, Object> map);
+    PageUtil<E> page(Map<String, Object> map);
 
     boolean update(T entity);
 
-    List<T> list(Map<String, Object> map);
+    List<E> list(Map<String, Object> map);
 
 }

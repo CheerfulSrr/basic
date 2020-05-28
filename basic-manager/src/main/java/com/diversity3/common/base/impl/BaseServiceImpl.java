@@ -23,15 +23,15 @@ import java.util.Map;
  * @version 0.1
  * @date 2020-05-27 11:03
  */
-public abstract class BaseServiceImpl<D extends BaseDao<T>, T> extends ServiceImpl<D, T> implements BaseService<T> {
+public abstract class BaseServiceImpl<D extends BaseDao<T>, T, E> extends ServiceImpl<D, T> implements BaseService<T, E> {
 
     @Override
-    public PageUtil<T> page(Map<String, Object> params) {
+    public PageUtil<E> page(Map<String, Object> params) {
         IPage<T> page = baseMapper.selectPage(
                 toPage(params, Constants.CREATE_TIME, true),
                 toQueryWrapper(params)
         );
-        List<T> result = toTarget(page.getRecords());
+        List<E> result = toTarget(page.getRecords());
         return toPageUtil(page, result);
     }
 
@@ -44,8 +44,9 @@ public abstract class BaseServiceImpl<D extends BaseDao<T>, T> extends ServiceIm
     }
 
     @Override
-    public List<T> list(Map<String, Object> params) {
-        return baseMapper.selectList(toQueryWrapper(params));
+    public List<E> list(Map<String, Object> params) {
+        List<T> list = baseMapper.selectList(toQueryWrapper(params));
+        return toTarget(list);
     }
 
     /**
@@ -90,8 +91,8 @@ public abstract class BaseServiceImpl<D extends BaseDao<T>, T> extends ServiceIm
     }
 
 
-    private PageUtil<T> toPageUtil(IPage<T> page, List<T> result) {
-        return new PageUtil<T>(page, result);
+    private PageUtil<E> toPageUtil(IPage<?> page, List<?> result) {
+        return new PageUtil(page, result);
     }
 
     /**
@@ -118,7 +119,7 @@ public abstract class BaseServiceImpl<D extends BaseDao<T>, T> extends ServiceIm
      * @param source List<T>
      * @return List<entity>
      */
-    public abstract List<T> toTarget(List<T> source);
+    public abstract List<E> toTarget(List<T> source);
 
     /**
      * 查询结果转换为实体类

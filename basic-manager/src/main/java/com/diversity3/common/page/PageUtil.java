@@ -34,7 +34,7 @@ public class PageUtil<T> implements Serializable {
         this.pageData = pageData;
     }
 
-    public PageUtil(IPage<T> page, List<T> pageData) {
+    public PageUtil(IPage<?> page, List<T> pageData) {
         this.pageData = pageData;
         this.pageTotal = (int) page.getTotal();
         this.pageNo = (int) page.getCurrent();
