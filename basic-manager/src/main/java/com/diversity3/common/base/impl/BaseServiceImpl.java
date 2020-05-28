@@ -37,10 +37,7 @@ public abstract class BaseServiceImpl<D extends BaseDao<T>, T, E> extends Servic
 
     @Override
     public boolean update(T entity) {
-        return SqlHelper.retBool(baseMapper.update(
-                entity,
-                toUpdateWrapper(entity)
-        ));
+        return SqlHelper.retBool(baseMapper.updateById(entity));
     }
 
     @Override
