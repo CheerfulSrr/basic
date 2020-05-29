@@ -23,7 +23,7 @@ import java.util.Date;
  * @description: ${comments}
  * @copyright: Copyright (c) ${date}
  */
-@lombok.EqualsAndHashCode(callSuper = true)
+@EqualsAndHashCode(callSuper = true)
 @Data
 @TableName("${tableName}")
 public class ${className}Entity extends BaseEntity {
