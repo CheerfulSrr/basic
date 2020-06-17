@@ -2,6 +2,6 @@ spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:p6spy:mysql://101.37.83.15:49700/basic?serverTimezone=Asia/Shanghai
+    url: jdbc:mysql://101.37.83.15:49700/basic?serverTimezone=Asia/Shanghai
     username: basic
     password: Basic$0827.&
